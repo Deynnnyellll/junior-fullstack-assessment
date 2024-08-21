@@ -1,0 +1,164 @@
+.app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 92vh;
+    background-color: #0B2447;
+    border-radius: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.home-page {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    height: 95%;
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    height: 70%;
+}
+
+.card {
+    width: 100%;
+    background-color: #A5D7E8;
+    cursor: pointer;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+    transition: ease-in-out linear 3s;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translate(0, -1%);
+}
+
+.single-item-buttons {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.forms {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.specific-item {
+    width: 50%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    padding: 20px;
+}
+
+.form-container input {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.form-container textarea {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.form-container label {
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.edit-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.create-container {
+    height: 500px;
+    width: 85%;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-container input {
+    padding: 20px;
+}
+
+.create-container h1 {
+    font-size: 2.1em;
+}
+
+.create-container textarea {
+    padding: 20px;
+}
+
+.create-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.home-button {
+    position: fixed;
+    top: 5;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    cursor: pointer;
+    transition: ease-in-out linear 3s;
+    z-index: 10;
+}
+
+.home-button:hover {
+    background-color: #0B2447;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
