@@ -8,7 +8,7 @@
 - source .venv/Scripts/activate (windows) || source .venv/bin/activate (mac) -> (to activate the .venv environment)
 
 ### Install necessary python dependecies
-- pip install requirements.txt -> (this will install all the necessary dependencies to run the api application)
+- pip install -r requirements.txt -> (this will install all the necessary dependencies to run the api application)
 
 ### Run the flask application
 - flask run
