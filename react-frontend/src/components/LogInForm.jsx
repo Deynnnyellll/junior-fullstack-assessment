@@ -1,9 +1,9 @@
-import { Button } from "@mui/material"
-import { useState } from "react"
+import { Button } from "@mui/material";
+import { useState } from "react";
 
 const LogInForm = ({ sendDataToParent}) => {
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault();
