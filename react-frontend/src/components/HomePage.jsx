@@ -7,7 +7,7 @@ import { IoIosCreate } from "react-icons/io";
 import { RiLogoutCircleFill } from "react-icons/ri";
 
 
-const HomePage = ({ accessToken }) => {
+const HomePage = ({ accessToken, logout }) => {
     const [items, setItems] = useState([]);
     const navigate = useNavigate();
 
@@ -24,10 +24,10 @@ const HomePage = ({ accessToken }) => {
             if(response.ok){
                 return response.json()
             }
-            else if(response === 401){
+            else if(response.status === 401 || response.status === 422){
                 // the session will expire and the website will go back to login to authorize again
                 alert("Session Expired");
-                location.reload();
+                localStorage.removeItem("access_token")
             }
             else {
                 console.log(response)
@@ -65,7 +65,7 @@ const HomePage = ({ accessToken }) => {
     <div className="home-page">
         <h1 style={{fontSize:"40pt"}}> Home Page </h1>
         <RiLogoutCircleFill size={25} style={{position: "absolute", top:"1.5%", left:"97%", transform:"translate(-70%, 0%)", cursor:"pointer"}} 
-                    onClick={() => location.reload()}
+                    onClick={logout}
         />
         <Button onClick={() => navigate("/create-item")} variant="contained" 
                 style={{marginBottom:"20px", fontSize:"20pt", width: "95%", height:"13%"}} 

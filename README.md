@@ -18,3 +18,7 @@
 - cd react-frontend -> (this will go to the react-frontend dir)
 - npm install -> (to install all the node packages)
 - npm run dev -> (to start running the react application)
+
+## Use these credentials to login
+#### username: user
+#### password: 123456

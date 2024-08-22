@@ -40,7 +40,6 @@ def login():
     else:
         return jsonify({"error": "Bad username or password | username and password mismatch"}), 404
 
-
 # display all items
 @app.route('/api/items', methods=['GET'])
 @jwt_required()

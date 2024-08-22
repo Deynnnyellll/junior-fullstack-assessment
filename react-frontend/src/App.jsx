@@ -10,13 +10,23 @@ import LogInForm from './components/LogInForm';
 // icons and hooks
 import { AiFillHome } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(true);
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(localStorage.getItem("access_token"));
+  const [isLogin, setIsLogin] = useState();
+
+  useEffect(() => {
+    if(!token) {
+      setIsLogin(true)
+    }
+    else {
+      setIsLogin(false)
+    }
+  },[token])
+
 
   function handleLogin(username, password) {
     fetch("/api/login", {
@@ -42,6 +52,7 @@ function App() {
       }
       else {
         setIsLogin(prevState => !prevState)
+        localStorage.setItem("access_token", data.access_token)
         setToken(data.access_token)
       }
 
@@ -51,13 +62,18 @@ function App() {
     })
   }
 
+  function handleLogout() {
+    localStorage.removeItem("access_token")
+    setToken(!token)
+  }
+
 
   return (
     <div className={isLogin ? 'login' :'app'}>
       <AiFillHome size={25} onClick={() => navigate("")} className={isLogin ? 'hide-element' :'home-button'}/>
       <Routes>
         <Route path='' element={isLogin ? <LogInForm handleLogin={handleLogin} sendDataToParent={handleLogin}/> 
-              : <HomePage accessToken={token}/>} 
+              : <HomePage accessToken={token} logout={handleLogout}/>} 
         />
         <Route path='item/:id' element={ <ItemDetailPage accessToken={token}/> } />
         <Route path='create-item'  element={ <Forms accessToken={token}/> }/>
