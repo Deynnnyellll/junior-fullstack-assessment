@@ -8,8 +8,8 @@ import { MdCancel } from "react-icons/md";
 import { useLocation } from "react-router-dom";
 
 const ItemDetailPage = ({ accessToken }) => {
-    const [item, setItem] = useState({})
-    const [editable, setEditable] = useState(false)
+    const [item, setItem] = useState({});
+    const [editable, setEditable] = useState(false);
     const { id } = useParams();
 
     // forms
@@ -19,7 +19,7 @@ const ItemDetailPage = ({ accessToken }) => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const [prevItem, setPrevItem] = useState(location.state)
+    const [prevItem, setPrevItem] = useState(location.state);
 
     // this will get the value of a specific item and render it to the component
     useEffect(() => {
