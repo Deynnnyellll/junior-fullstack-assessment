@@ -233,9 +233,8 @@
 }
 
 
-/* Desktops */
+/* Bigger Screen */
 @media only screen and (min-width: 1921px) {
-    /* Styles for desktops */
     .app {
         height: 80vh;
     }
