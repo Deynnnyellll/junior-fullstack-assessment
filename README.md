@@ -10,6 +10,8 @@
 ### Install necessary python dependecies
 - pip install requirements.txt -> (this will install all the necessary dependencies to run the api application)
 
+### Run the flask application
+- flask run
 
 ## For running the client application
 - do not forget to add new git/powershell terminal
