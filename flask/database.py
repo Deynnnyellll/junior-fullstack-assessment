@@ -51,8 +51,13 @@ class Database:
         
         cursor.execute(query, values)
         con.commit()
+        
+        get_query = "SELECT * FROM tbl WHERE id = ?"
+        cursor.execute(get_query, (id,))
 
-        print("Record update successfully")
+        record = dict(zip(self.keys, cursor.fetchone()))
+
+        return record
 
     # display all records
     def display_all_records(self):

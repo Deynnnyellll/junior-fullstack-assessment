@@ -9,7 +9,14 @@
 ### Install necessary python dependecies
 - pip install requirements.txt
 
+### Run the the flask application
+- flask run
+
 
 ## For running the client application
 - npm install
 - npm run dev
+
+# Login through these credentials
+### username: user
+### password: 123456
